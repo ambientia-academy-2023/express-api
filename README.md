@@ -14,3 +14,31 @@ Jos laitat näin bind-address=0.0.0.0 niin MySQL päästää sisään mistä hyv
 
 Kannattaa myös suuurentaa thread-stack määrä seuraavasti <br>
 thread_stack = 256K tällöin voit suorittaa proseduureja.
+
+### Tietokanta tätä esimerkkiä varten
+
+Luodaan ajamalla komennot 
+<pre>
+CREATE DATABASE netdb;
+CREATE USER 'netuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'netpass';
+GRANT ALL on netdb.* to 'netuser'@'localhost';
+
+USE netdb;
+
+CREATE TABLE book(
+id_book INT primary key auto_increment,
+name VARCHAR(255),
+author VARCHAR(255),
+isbn VARCHAR(20)
+);
+
+INSERT INTO book(name,author,isbn) VALUES('PHP Basic','Bob Jones','123-456-789-111-x');
+INSERT INTO book(name,author,isbn) VALUES('Statistics','Lisa Smith','222-333-444-555-y');
+
+CREATE TABLE user_table(
+  id_user INT primary key auto_increment,
+  username VARCHAR(20),
+  password VARCHAR(255),
+  UNIQUE (username)
+);
+</pre>
