@@ -73,3 +73,10 @@ dotenv.config();
 const connection = mysql.createPool(process.env.MYSQL_SERVER);
 module.exports = connection;
 </pre>
+
+## app.js
+Lisää **app.js** tiedostoon rivit 
+<pre>
+const bookRouter = require('./router/book');
+app.use('/book',bookRouter);
+</pre>
