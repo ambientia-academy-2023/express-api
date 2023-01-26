@@ -50,3 +50,9 @@ Suoritetaan komento **npm install**
 
 Kokeillaan sovellusta käynnistämällä se komennolla **npm start**. Sovelluksessa on "endpointit" 
 http://localhost:3000 ja http://localhost:/users
+
+## dotenv
+Asennetaan komennolla **npm install dotenv**
+
+## mysql
+Asennetaan komennolla **npm install mysql**
