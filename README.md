@@ -60,7 +60,7 @@ Asennetaan komennolla **npm install mysql**
 ## env
 Luodaan tiedosto **.env** ja kirjoitetaan sinne rivi 
 <pre>
-MYSQL_SERVER=mysql://netuser:netpass@server:3306/netdb
+MYSQL_SERVER=mysql://netuser:netpass@localhost:3306/netdb
 </pre>
 Tiedosto .env jätetään yleensä pois reposta lisäämällä se .gitignore:en
 
@@ -77,6 +77,6 @@ module.exports = connection;
 ## app.js
 Lisää **app.js** tiedostoon rivit 
 <pre>
-const bookRouter = require('./router/book');
+const bookRouter = require('./routes/book');
 app.use('/book',bookRouter);
 </pre>
