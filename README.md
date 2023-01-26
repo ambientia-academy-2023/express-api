@@ -80,3 +80,6 @@ Lisää **app.js** tiedostoon rivit
 const bookRouter = require('./routes/book');
 app.use('/book',bookRouter);
 </pre>
+
+## http-basic autentikaatio
+Asenna moduuli komennolla **npm install express-basic-auth**
