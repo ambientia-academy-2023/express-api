@@ -63,3 +63,13 @@ Luodaan tiedosto **.env** ja kirjoitetaan sinne rivi
 MYSQL_SERVER=mysql://netuser:netpass@server:3306/netdb
 </pre>
 Tiedosto .env jätetään yleensä pois reposta lisäämällä se .gitignore:en
+
+## database.js
+Luo sovelluksen juureen tiedosto **database.js** ja kirjoita sinne rivit 
+<pre>
+const mysql = require('mysql');
+const dotenv = require('dotenv');
+dotenv.config();
+const connection = mysql.createPool(process.env.MYSQL_SERVER);
+module.exports = connection;
+</pre>
