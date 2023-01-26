@@ -34,7 +34,7 @@ function(request, response) {
     if (err) {
       response.json(err);
     } else {
-      response.json(request.body);
+      response.json(dbResult.affectedRows);
       console.log(dbResult);
     }
   });
@@ -48,6 +48,7 @@ function(request, response) {
       response.json(err);
     } else {
       response.json(dbResult);
+      console.log(dbResult);
     }
   });
 });
@@ -59,7 +60,8 @@ function(request, response) {
     if (err) {
       response.json(err);
     } else {
-      response.json(dbResult);
+      console.log(dbResult);
+      response.json(dbResult.affectedRows);
     }
   });
 });
