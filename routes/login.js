@@ -2,13 +2,16 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const user = require('../models/user_model');
+const dotenv = require('dotenv');
+const jwt = require('jsonwebtoken');
+
+dotenv.config();
 
 router.post('/', 
   function(request, response) {
     if(request.body.username && request.body.password){
-      const username = request.body.username;
       const password = request.body.password;
-        user.checkPassword(username, function(dbError, dbResult) {
+        user.checkPassword(request.body.username, function(dbError, dbResult) {
           if(dbError){
             response.json(dbError);
           }
@@ -17,7 +20,8 @@ router.post('/',
               bcrypt.compare(password,dbResult[0].password, function(err,compareResult) {
                 if(compareResult) {
                   console.log("succes");
-                  response.send(true);
+                  const token = generateAccessToken({ username: request.body.username });
+                  response.send(token);
                 }
                 else {
                     console.log("wrong password");
@@ -40,5 +44,10 @@ router.post('/',
     }
   }
 );
+
+function generateAccessToken(username) {
+  dotenv.config();
+  return jwt.sign(username, process.env.MY_TOKEN, { expiresIn: '1800s' });
+}
 
 module.exports=router;
