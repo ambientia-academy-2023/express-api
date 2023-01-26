@@ -23,6 +23,9 @@ const user={
       return db.query('update user_table set username=?, password=? where id_user=?',
       [user.username, hashed_password, id], callback);
     });
+  },
+  checkPassword: function(username, callback) {
+    return db.query('SELECT password FROM user_table WHERE username = ?',[username], callback); 
   }
 
 }
