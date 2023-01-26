@@ -56,3 +56,10 @@ Asennetaan komennolla **npm install dotenv**
 
 ## mysql
 Asennetaan komennolla **npm install mysql**
+
+## env
+Luodaan tiedosto **.env** ja kirjoitetaan sinne rivi 
+<pre>
+MYSQL_SERVER=mysql://netuser:netpass@server:3306/netdb
+</pre>
+Tiedosto .env jätetään yleensä pois reposta lisäämällä se .gitignore:en
