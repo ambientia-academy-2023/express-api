@@ -48,4 +48,5 @@ Alustetaan sovellus komennolla **npx express-generator --no-view**
 
 Suoritetaan komento **npm install**
 
-Kokeillaan sovellusta käynnistämällä se komennolla **npm start**
+Kokeillaan sovellusta käynnistämällä se komennolla **npm start**. Sovelluksessa on "endpointit" 
+http://localhost:3000 ja http://localhost:/users
