@@ -42,3 +42,10 @@ CREATE TABLE user_table(
   UNIQUE (username)
 );
 </pre>
+
+## express-generator
+Alustetaan sovellus komennolla **npx express-generator --no-view**
+
+Suoritetaan komento **npm install**
+
+Kokeillaan sovellusta käynnistämällä se komennolla **npm start**
